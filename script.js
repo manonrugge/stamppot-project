@@ -19,20 +19,23 @@ dish.events = function () {
     var potatoIngredients = ['kale', 'raw-endive', 'beets'];
     var ingredients = []
 
-    $('.mainIngredient input[name=ingredient]').on('change',function(){
-        console.log(this); // this equals the selected ingredient
-        const selected = $(this).val();
-        
+console.log('hello')
+    $('input[name=ingredient]').on('change',function(){
+        // $('.ing').hide()
+        // console.log(this); // this equals the selected ingredient
+        const selected = $('input[name=ingredient]:checked').val();
+        // console.log(selected)
+        // console.log(selected === 'potato')
+        // $(`.${selected}`).show();
+        $(`.${selected}`).removeClass('secHidden');        
+        $(`.p-secIngredient`).removeClass('hidden');
         if (selected === 'potato') {
-            $(`.${selected}`).show();
-            $(`.sweet-potato`).hide();
-            // ingredients = potatoIngredients,
+            $(`.mainIngredient .sweet-potato`).addClass('hidden');
+        } else {
+            $(`.mainIngredient .potato`).addClass('hidden');
+        }
             
-        } else if (selected === 'sweet-potato') {
-            $(`.${selected}`).show();
-            $(`.potato`).hide();
-            // ingredients = sweetPotatoIngredients
-        };
+       
 
        console.log(selected)//Array of ingredients
 
@@ -46,7 +49,7 @@ dish.events = function () {
 }
 
 dish.events ();
-
+console.log (this);
 
 // $(.selectedElementIWantToShow’).removeClass(‘hidden’)
 // With JS you can use.addClass() and.removeClass()

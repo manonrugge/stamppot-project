@@ -18,6 +18,14 @@ body {
     margin: 0 auto;
 }
 
+.hidden {
+    display: none;
+}
+
+.secHidden {
+    display: none;
+}
+
 
 @import "components/header";
 @import "components/main-about";
