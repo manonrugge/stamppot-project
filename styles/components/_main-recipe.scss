@@ -1,0 +1,23 @@
+// main final recipe section styles goes here
+
+
+.result-recipe {
+    background-color: papayawhip;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+.recipe-image {
+    width: 30%;
+    display: block;
+}
+
+.recipe-info {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+

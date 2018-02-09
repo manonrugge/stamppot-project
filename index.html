@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stamppot</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+
+    <!-- === Page header goes here === -->
+
+    <header class="wrapper">
+        <h2>Comfort Food!</h2>
+        <h1>Which Stamppot should I eat for dinner?</h1>
+    </header>
+
+    <main class="wrapper">
+
+        <!-- === Page about goes here === -->
+
+        <section class="about-stamppot">
+            <div>
+                <img src="http://unsplash.it/500/300" alt="">
+            </div>
+            <div>
+                <h2>What is Stamppot?</h2>
+                <p>Arguably this is the Netherland's most famous dish. It consists out of one vegatable and potato mash, served with different toppings to add color and flavour. This is a dish that is very popular during the winter season. As with all traditional dishes, there are many recipes for this dish. So where do you start? Well, I will help you to get started!</p>
+            </div>
+        </section>
+
+        <!-- === Select main ingredient goes here === -->
+
+        <form action="">
+
+            <section class="mainIngredient">
+
+                <h4>Which kind of potato do you wanna use as a main ingredient?</h4>
+                <div class="potato">
+                    <img src="images/potatoes.png" alt="">
+                    <label for="potato">Potatoes</label>
+                    <input type="radio" name="ingredient" id="potato" value="potato" autocomplete="off">
+                </div>
+
+                <div class="sweet-potato">
+                    <img src="images/sweet-potato.png" alt="">
+                    <label for="sweet-potato">Sweet Potatoes</label>
+                    <input type="radio" name="ingredient" id="sweet-potato" value="sweet-potato" autocomplete="off">
+                </div>
+            </section>
+
+        </form>
+
+        <!-- === Select secondary ingredient goes here === -->
+
+
+
+        <form action="">
+            
+            <!-- === Select secondary potato ingredient goes here === -->
+
+            <section class="p-secIngredient">
+
+                <h4>Which vegetable would you like to add to your mashed potatoes?</h4>
+                <div class="potato">
+                    <img src="http://unsplash.it/200/200" alt="">
+                    <label for="kale">Kale</label>
+                    <input type="radio" name="p-ingredient" id="kale" value="kale">
+                </div>
+
+                <div class="potato">
+                    <img src="http://unsplash.it/200/200" alt="">
+                    <label for="beets">Beets</label>
+                    <input type="radio" name="p-ingredient" id="beets" value="beets">
+                </div>
+
+                <div class="potato">
+                    <img src="http://unsplash.it/200/200" alt="">
+                    <label for="raw-endive">Raw Endive</label>
+                    <input type="radio" name="p-ingredient" id="raw-endive" value="raw-endive">
+                </div>
+
+            </section>  
+
+        </form>
+
+        <!-- === Select secondary sweet-potato ingredient goes here === -->
+
+        <form action="">
+
+            <section class="sp-secIngredient">
+
+                <div class="sweet-potato">
+                    <img src="http://unsplash.it/200/200" alt="">
+                    <label for="spinach">Spinach</label>
+                    <input type="radio" checked="false" name="sp-ingredient" id="spinach" value="spinach">
+                </div>
+
+                <div class="sweet-potato">
+                    <img src="http://unsplash.it/200/200" alt="">
+                    <label for="spinach">Kale</label>
+                    <input type="radio" name="sp-ingredient" id="kale" value="kale">
+                </div>
+
+            </section>
+        
+        </form>
+      
+
+        <!-- === Select toppings goes here === -->
+
+            <section class="toppings">
+                <h4>To finish your stamppot, what kind of topping do you prefer?</h4>
+            
+                <ul>
+                    <li class="potato">
+                        <label for="kale">Beets toppings</label>
+                        <input type="radio" name="beets-toppings" id="kale" value="beets-toppings">
+                        <img src="http://unsplash.it/200/200" alt="">
+                        <img src="http://unsplash.it/200/200" alt="">
+                    </li>
+                    
+                    <li class="potato">
+                        <label for="beets">Beets toppings</label>
+                        <input type="radio" name="beets-toppings" id="beets" value="beets-toppings">
+                        <img src="http://unsplash.it/200/200" alt="">
+                        <img src="http://unsplash.it/200/200" alt="">
+                    </li>
+
+                    <li class="sweet-potato">
+                        <label for="raw-endive">Kale toppings</label>
+                        <input type="radio" name="kale-toppings" id="kale" value="kale-toppings">
+                        <img src="http://unsplash.it/200/200" alt="">
+                        <img src="http://unsplash.it/200/200" alt="">
+                    </li>
+                    
+                    <li class="sweet-potato">
+                        <label for="spinach">Spinach toppings</label>
+                        <input type="radio" name="spinach-toppings" id="spinach" value="spinach-toppings">
+                        <img src="http://unsplash.it/200/200" alt="">
+                        <img src="http://unsplash.it/200/200" alt="">
+                        <img src="http://unsplash.it/200/200" alt="">
+                    </li>
+                </ul>
+            
+            </section>
+
+        </form>
+
+        <!-- === Users final recipe goes here === -->
+
+        <section class="result-recipe">
+
+            <div class="recipe-image">
+                <img src="images/recipe-01.jpg" alt="">
+            </div>
+
+            <div class="recipe-info">
+                <div class="recipe-info">
+                    <!-- <img src="images/illustration-01.png" alt="">
+                    <img src="images/illustration-01.png" alt="">
+                    <img src="images/illustration-01.png" alt=""> -->
+
+                </div>
+
+                <div class="recipe-ingredients">
+                    <h4>Ingredients</h4>
+                    <ul>
+                        <li>Ingredient1</li>
+                        <li>Ingredient1</li>
+                        <li>Ingredient1</li>
+                        <li>Ingredient1</li>
+                        <li>Ingredient1</li>
+                    </ul>
+                </div>
+
+                <div class="recipe-method">
+                    <h4>Method</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit molestias delectus repellendus! Cupiditate delectus optio velit dolore harum, possimus quis asperiores, cum et id impedit? Aliquam accusantium voluptates deserunt et?
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+
+    <!-- === Page footer goes here === -->
+
+    <footer>
+
+
+    </footer>
+
+
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
