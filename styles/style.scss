@@ -14,6 +14,7 @@ body {
     background-repeat: repeat;
     background-size: 100px 100px;
     text-align: center;
+    color: #2875c8;
 }
 
 img {
@@ -33,18 +34,46 @@ section {
     margin: 0 auto;
 }
 
-.mainIngredient img {
-    -webkit-filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.4));
-    // filter: drop-shadow(2px 2px 1px #222);
-    // filter: alpha(opacity=10);
-}
+@media (max-width: 960px) {
 
-@media (max-width: 750px) {
     .wrapper {
-        width: 90%;
-        margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
     }
 }
+
+
+
+@media (max-width: 768px) {
+
+    .wrapper {
+    width: 80%;
+    margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 480px) {
+    
+	.wrapper {
+    width: 90%;
+    margin: 0 auto;
+    }
+
+    section {
+        margin: 50px 0px;
+    }
+}
+
+
+.mainIngredient img, 
+.secIngredient img, 
+.toppings img  {
+    -webkit-filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.4));
+    padding: 10px;
+}
+
+
 
 .hidden {
     display: none;

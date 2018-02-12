@@ -1,12 +1,19 @@
-// I create my main empty object where my functionality will live inside of
-//dish can be named everything
-
 const dish = {};
+
+// button scroll function 
+
+$('button').on('click', function () {
+    $('html').animate({
+        scrollTop: $('#aboutStamppot').offset().top
+    }, 1000);
+});
+
+// Recipes content 
 
 const recipes = {
     beets : {
-        title: "Stamppot Beets and Smoked Sausage",
-        ingredients: ["1 kilo potatoes", "bunch fresh kale", "2 onions chopped", "50g butter"],
+        title: "Stampot Raw Endive with Apples and Feta Cheese",
+        ingredients: ["1 kilo potatoes", "bunch fresh kale", "2 onions chopped", "50g butter", "1 apple", "feta cheese"],
         illustrations: "images/tools_white.svg",
         photo: "images/recipe-03.jpg",
         direction: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit molestias delectus repellendus! Cupiditate delectus optio velit dolore harum, possimus quis asperiores, cum et id impedit? Aliquam accusantium voluptates deserunt et?"
@@ -15,11 +22,13 @@ const recipes = {
         title: "Stamppot Kale and Smoked Sausage",
         ingredients: ["1 kilo potatoes", "bunch fresh kale", "2 onions chopped", "50g butter"],
         illustrations: "images/tools_white.svg",
-        photo: "images/recipe-03.jpg",
-        direction: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit molestias delectus repellendus! Cupiditate delectus optio velit dolore harum, possimus quis asperiores, cum et id impedit? Aliquam accusantium voluptates deserunt et?"
+        photo: "images/recipe-02.jpg",
+        direction: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit molestias delectus repellendus! Cupiditate delectus optio velit dolore harum, possimus quis asperiores, cum et id impedit? Aliquam accusantium voluptates deserunt et? Fugit molestias delectus repellendus! Cupiditate delectus optio velit dolore harum, possimus quis asperiores, cum et id impedit? Aliquam accusantium voluptates deserunt et?"
     },   
-
 };
+
+
+// Carousel function 
 
 function createCarouselCell(recipeIngredient) {
 
@@ -62,6 +71,7 @@ function carousel() {
     });
 }
 
+// Users selections
 
 dish.events = function () {
    
@@ -72,6 +82,8 @@ dish.events = function () {
 
     var ingredients = []
 
+    // first ingredient selection user
+
     $('input[name=ingredient]').on('change',function(){
        
         const selected = $('input[name=ingredient]:checked').val();
@@ -80,8 +92,6 @@ dish.events = function () {
         $(`.secIngredient`).removeClass('hidden');
         if (selected === 'potato') {
             $(`.mainIngredient .sweet-potato`).addClass('hidden');
-            // $('ul').append(`<li> <span class="fa fa-square-o"></span> ${toDoItem} </li>`);
-            // $('input').val('');
         } else {
             $(`.mainIngredient .potato`).addClass('hidden');
         }
@@ -92,8 +102,11 @@ dish.events = function () {
         });
     });
 
+    // second ingredient selection user
+
     $('input[name=secIngredient]').on('change',function(){
         const nextSelected = $('input[name=secIngredient]:checked').val();
+
         if (nextSelected === 'kale') {
             $(`.vegetable`).addClass('hidden'),
             $(`.kale`).removeClass('hidden'),
@@ -125,91 +138,40 @@ dish.events = function () {
             scrollTop: $('.toppings').offset().top
         });
 
-
-
         ingredients.push(nextSelected); 
         
     });
 
+    // Final Selection user
+
     $('input[name=toppings]').on('change', function () {
         const finalSelection = $('input[name=toppings]:checked').val();
-        console.log(finalSelection)
 
         if (finalSelection === 'beets-toppings') {
         $(`.result-recipe`).removeClass('hidden')
             createCarouselCell("beets");
             createCarouselCell("kale");
-     
+    
         } else if (finalSelection === 'kale-toppings') {
+            $(`.result-recipe`).removeClass('hidden')
+            createCarouselCell("beets");
             createCarouselCell("kale");
-
-
         } else if (finalSelection === 'raw-endive-toppings') {
-
+            $(`.result-recipe`).removeClass('hidden')
+            createCarouselCell("beets");
+            createCarouselCell("kale");
         } else if (finalSelection === 'spinach-toppings') {
-
+            $(`.result-recipe`).removeClass('hidden')
+            createCarouselCell("beets");
+            createCarouselCell("kale");
         } else {
-
+            $(`.result-recipe`).removeClass('hidden')
+            createCarouselCell("beets");
+            createCarouselCell("kale");
         };
 
         carousel()
-
     });
 }
 
-
-
 dish.events ();
-
-
-
-
-
-
-
-
-
-// $(.selectedElementIWantToShow’).removeClass(‘hidden’)
-// With JS you can use.addClass() and.removeClass()
-// Yes, the same for the ingredient
-// $(‘.selectedElement).addClass(‘hidden’)
-
-
-// var mainIngredient = '.mainIngredient input[name = ingredient]';
-
-// var ingredients = ['kale', 'bacon', 'cheese'];
-
-// for (var i = 0; i < ingredients.lenght; i++)
-//     ingredient = ingredients[i]
-// 	// do something with it
-
-
-
-
-// if (input[name] === potatoes) {
-//     ingredients = potatoeIngredients
-// } else {
-//     ingredients = sweetPotatoesIngredients
-
-
-//     If(input[name] == potato) { Var ingredients = [‘butter’, ‘egg’] }
-
-// let product = $('select').val();
-// foodAhoy.inventory[product] = foodAhoy.inventory[product] - 1;
-// $('ul').empty();
-// foodAhoy.displayInventory();
-
-
-//But what you can do to, if you can select all of them in JS and add autocomplete to all of them on page init 
-
-//but if you want to remove or add a class, you need to select the element
-//try to console.log the lement itself to see if you are targetting the correct one
-//so you have to think on a few things while targeting element with JS
-//if you want to add a class, remove a class, add an effect, you need to get the element.
-//but to target them, you need to exact name of the selector in JS
-//if it's class, and my class is topping, if I do $(".toppings"), JS will look for the exact selector so it will not work
-//It the same for the value, you want to target the exact element, but this time to apply another method.val() to get the value, instead of.addClass, .removeClass, .fadeIn()
-// when you use it, always think of what is the element and what it's the best attribute to use
-
-
-//elementIWantToShow.show(optionOnHowIWantToShow)
