@@ -1,5 +1,29 @@
 // header styles goes here
 
+
 header {
-    background-color: papayawhip;
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(1, 22, 50, 0.45)), url("./../images/recipe-01.jpg");
+    background-color: rgba(1, 22, 50, 0.45);
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin: 100px auto;
+    color: white;
+    h1 {
+        font-size: 50px;
+    }
+}
+
+.fa-arrow-circle-down {
+    font-size: 30px;
+    // text-align: center;
+    margin: 0 auto;
 }

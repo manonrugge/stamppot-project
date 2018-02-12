@@ -7,23 +7,29 @@
     <title>Stamppot</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 <body>
 
     <!-- === Page header goes here === -->
 
-    <header class="wrapper">
-        <h2>Comfort Food!</h2>
-        <h1>Which Stamppot should I eat for dinner?</h1>
+    <header>
+        <div class="header-text wrapper">
+            <h2>Comfort Food!</h2>
+            <h1>Which Stamppot should I eat for dinner?</h1>
+            <i class="fas fa-arrow-circle-down"></i>
+        </div>
     </header>
 
     <main class="wrapper">
 
         <!-- === Page about goes here === -->
 
-        <section class="about-stamppot">
-            <div>
-                <img src="http://unsplash.it/500/300" alt="">
+        <section class="about-stamppot" id="about-stamppot">
+            <div class="pan">
+                <img src="images/pan.svg" alt="">
             </div>
             <div>
                 <h2>What is Stamppot?</h2>
@@ -33,162 +39,255 @@
 
         <!-- === Select main ingredient goes here === -->
 
-        <form action="">
+        <form action="#">
 
             <section class="mainIngredient">
 
                 <h4>Which kind of potato do you wanna use as a main ingredient?</h4>
                 <div class="potato">
-                    <img src="images/potatoes.png" alt="">
+                    <img src="images/potato.png" alt="">
                     <label for="potato">Potatoes</label>
                     <input type="radio" name="ingredient" id="potato" value="potato" autocomplete="off">
                 </div>
 
                 <div class="sweet-potato">
-                    <img src="images/sweet-potato.png" alt="">
+                    <img src="images/sweet_potato.png" alt="">
                     <label for="sweet-potato">Sweet Potatoes</label>
                     <input type="radio" name="ingredient" id="sweet-potato" value="sweet-potato" autocomplete="off">
                 </div>
+
             </section>
 
-        </form>
 
-        <!-- === Select secondary ingredient goes here === -->
+            <!-- === Select secondary ingredient goes here === -->
 
-
-
-        <form action="">
-            
-
-            <section class="p-secIngredient hidden">
+            <section class="secIngredient hidden">
 
                 <h4>Which vegetable would you like to add to your mashed potatoes?</h4>
-                <div class="potato secHidden">
-                    <img src="http://unsplash.it/200/200" alt="">
+                <div class="potato vegetable kale secHidden">
+                    <img src="images/kale.png" alt="">
                     <label for="kale">Kale</label>
-                    <input type="radio" name="p-ingredient" id="kale" value="kale">
+                    <input type="radio" name="secIngredient" id="kale" value="kale">
                 </div>
 
-                <div class="potato secHidden">
-                    <img src="http://unsplash.it/200/200" alt="">
+                <div class="potato vegetable beets secHidden">
+                    <img src="images/beet.png" alt="">
                     <label for="beets">Beets</label>
-                    <input type="radio" name="p-ingredient" id="beets" value="beets">
+                    <input type="radio" name="secIngredient" id="beets" value="beets" autocomplete="off">
                 </div>
 
-                <div class="potato secHidden">
-                    <img src="http://unsplash.it/200/200" alt="">
+                <div class="potato vegetable raw-endive secHidden">
+                    <img src="images/endive.png" alt="">
                     <label for="raw-endive">Raw Endive</label>
-                    <input type="radio" name="p-ingredient" id="raw-endive" value="raw-endive">
+                    <input type="radio" name="secIngredient" id="raw-endive" value="raw-endive" autocomplete="off">
                 </div>
 
-                <div class="sweet-potato secHidden">
-                    <img src="http://unsplash.it/200/200" alt="">
+                <div class="sweet-potato vegetable spinach secHidden">
+                    <img src="images/spinach.png" alt="">
                     <label for="spinach">Spinach</label>
-                    <input type="radio" checked="false" name="sp-ingredient" id="spinach" value="spinach">
+                    <input type="radio" checked="false" name="secIngredient" id="spinach" value="spinach" autocomplete="off">
                 </div>
         
-                <div class="sweet-potato secHidden">
-                    <img src="http://unsplash.it/200/200" alt="">
-                    <label for="spinach">Kale</label>
-                    <input type="radio" name="sp-ingredient" id="kale" value="kale">
+                <div class="sweet-potato vegetable sprouts secHidden">
+                    <img src="images/sprout.png" alt="">
+                    <label for="spinach">Sprouts</label>
+                    <input type="radio" name="secIngredient" id="sprouts" value="sprouts" autocomplete="off">
                 </div>
 
             </section>  
 
-       
 
-       
-
-        <!-- === Select toppings goes here === -->
+            <!-- === Select toppings goes here === -->
 
             <section class="toppings hidden">
+                
                 <h4>To finish your stamppot, what kind of topping do you prefer?</h4>
             
                 <ul>
-                    <li class="potato">
-                        <label for="kale">Beets toppings</label>
-                        <input type="radio" name="beets-toppings" id="kale" value="beets-toppings">
-                        <img src="http://unsplash.it/200/200" alt="">
-                        <img src="http://unsplash.it/200/200" alt="">
+                    <li class="beets-toppings" style="display: none">
+                        <img src="images/apple_feta.png" alt="">
+                        <label for="beets">Beets toppings</label>
+                        <input type="radio" name="toppings" id="beets" value="beets-toppings" autocomplete="off">
                     </li>
                     
-                    <li class="potato">
-                        <label for="beets">Beets toppings</label>
-                        <input type="radio" name="beets-toppings" id="beets" value="beets-toppings">
-                        <img src="http://unsplash.it/200/200" alt="">
-                        <img src="http://unsplash.it/200/200" alt="">
+                    <li class="kale-toppings" style="display: none">
+                        <img src="images/bacon_sausage.png" alt="">
+                        <label for="kale">Kale toppings</label>
+                        <input type="radio" name="toppings" id="kale" value="kale-toppings" autocomplete="off">
                     </li>
 
-                    <li class="sweet-potato">
-                        <label for="raw-endive">Kale toppings</label>
-                        <input type="radio" name="kale-toppings" id="kale" value="kale-toppings">
-                        <img src="http://unsplash.it/200/200" alt="">
-                        <img src="http://unsplash.it/200/200" alt="">
+                    <li class="raw-endive-toppings" style="display: none">
+                        <img src="images/cheese_nutmeg.png" alt="">
+                        <label for="raw-endive">Raw Endive toppings</label>
+                        <input type="radio" name="toppings" id="raw-endive" value="raw-endive-toppings" autocomplete="off">
                     </li>
                     
-                    <li class="sweet-potato">
+                    <li class="spinach-toppings" style="display: none">
+                        <img src="images/goat_walnut.png" alt="">
                         <label for="spinach">Spinach toppings</label>
-                        <input type="radio" name="spinach-toppings" id="spinach" value="spinach-toppings">
-                        <img src="http://unsplash.it/200/200" alt="">
-                        <img src="http://unsplash.it/200/200" alt="">
-                        <img src="http://unsplash.it/200/200" alt="">
+                        <input type="radio" name="toppings" id="spinach" value="spinach-toppings" autocomplete="off">
+                    </li>
+
+                    <li class="sprouts-toppings" style="display: none">
+                        <img src="images/tofu_pepper.png" alt="">
+                        <label for="sprouts">Sprouts toppings</label>
+                        <input type="radio" name="toppings" id="sprouts" value="sprouts-toppings" autocomplete="off">
                     </li>
                 </ul>
             
             </section>
 
         </form>
+    
+    </main>
 
         <!-- === Users final recipe goes here === -->
 
         <section class="result-recipe hidden">
 
-            <div class="recipe-image">
-                <img src="images/recipe-01.jpg" alt="">
-            </div>
-
-            <div class="recipe-info">
-                <div class="recipe-info">
-                    <!-- <img src="images/illustration-01.png" alt="">
-                    <img src="images/illustration-01.png" alt="">
-                    <img src="images/illustration-01.png" alt=""> -->
-
-                </div>
-
-                <div class="recipe-ingredients">
-                    <h4>Ingredients</h4>
-                    <ul>
-                        <li>Ingredient1</li>
-                        <li>Ingredient1</li>
-                        <li>Ingredient1</li>
-                        <li>Ingredient1</li>
-                        <li>Ingredient1</li>
-                    </ul>
-                </div>
-
-                <div class="recipe-method">
-                    <h4>Method</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit molestias delectus repellendus! Cupiditate delectus optio velit dolore harum, possimus quis asperiores, cum et id impedit? Aliquam accusantium voluptates deserunt et?
-                    </p>
-                </div>
-            </div>  
+            <div class="main-carousel"></div>
+            
         </section>
 
-    </main>
+    
 
 
     <!-- === Page footer goes here === -->
 
     <footer>
-
-
+        <p class="copyright wrapper">© 2018 Manon Rugge, All Rights Reserved</p>
     </footer>
 
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
+        crossorigin='anonymous'></script>
+    
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
-    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+
     <script src="script.js"></script>
 
 </body>
 
 </html>
+            <!-- === carousel recipe === -->
+            <!-- <div class="carousel-cell beets data-flickity">
+                                <h2>Stamppot Kale and Smoked Sausage</h2>
+                                <div class="recipe-container wrapper">
+                                    <div class="recipe-ingredients">
+                                        <h4>Ingredients</h4>
+                                        <ul>
+                                            <li>1 kilo potatoes</li>
+                                            <li>bunch fresh kale</li>
+                                            <li>2 onions chopped</li>
+                                            <li>50g butter</li>
+                                            <li>150g bacon chopped</li>
+                                            <li>1 smoked sausage</li>
+                                            <li>1 dl milk</li>
+                                        </ul>
+                                    </div>
+                                    <div class="recipe-illustrations">
+                                        <h4>Tools</h4>
+                                        <img src="images/tools_white.svg" alt="">
+                                    </div>
+                                </div>
+                                
+                                <div class="recipe-info wrapper">
+                                    <div class="recipe-photo">
+                                        <img src="images/recipe-03.jpg" alt="">
+                                    </div>
+                                    <div class="recipe-method">
+                                        <h4>Directions</h4>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit molestias delectus repellendus! Cupiditate delectus optio velit dolore harum, possimus quis asperiores, cum et id impedit? Aliquam accusantium voluptates deserunt et?
+                                        </p>
+                                        <p>
+                                            Cupiditate delectus optio
+                                            velit dolore harum, possimus quis asperiores, cum et id impedit? Aliquam accusantium voluptates deserunt et?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> -->
+            
+            <!-- === carousel recipe === -->
+            
+            <!-- <div class="carousel-cell beets data-flickity">
+                                <h2>Stamppot Raw-Endive and cheese cubes</h2>
+                                <div class="recipe-container wrapper">
+                                    <div class="recipe-ingredients">
+                                        <h4>Ingredients</h4>
+                                        <ul>
+                                            <li>1 kilo potatoes</li>
+                                            <li>bunch fresh kale</li>
+                                            <li>2 onions chopped</li>
+                                            <li>50g butter</li>
+                                            <li>150g bacon chopped</li>
+                                            <li>1 smoked sausage</li>
+                                            <li>1 dl milk</li>
+                                        </ul>
+                                    </div>
+                                    <div class="recipe-illustrations">
+                                        <h4>Tools</h4>
+                                        <img src="images/tools_white.svg" alt="">
+                                    </div>
+                                </div>
+                            
+                                <div class="recipe-info wrapper">
+                                    <div class="recipe-photo">
+                                        <img src="images/recipe-02.jpg" alt="">
+                                    </div>
+                                    <div class="recipe-method">
+                                        <h4>Directions</h4>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit molestias delectus repellendus! Cupiditate delectus optio
+                                            velit dolore harum, possimus quis asperiores, cum et id impedit? Aliquam accusantium voluptates deserunt
+                                            et?
+                                        </p>
+                                        <p>
+                                            Cupiditate delectus optio velit dolore harum, possimus quis asperiores, cum et id impedit? Aliquam accusantium voluptates
+                                            deserunt et?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> -->
+            
+            <!-- === carousel recipe === -->
+            
+            <!-- <div class="carousel-cell  data-flickity">
+                                <h2>Stamppot Raw-Enddummy ive and cheese cubes</h2>
+                                <div class="recipe-container wrapper">
+                                    <div class="recipe-ingredients">
+                                        <h4>Ingredients</h4>
+                                        <ul>
+                                            <li>1 kilo potatoes</li>
+                                            <li>bunch fresh kale</li>
+                                            <li>2 onions chopped</li>
+                                            <li>50g butter</li>
+                                            <li>150g bacon chopped</li>
+                                            <li>1 smoked sausage</li>
+                                            <li>1 dl milk</li>
+                                        </ul>
+                                    </div>
+                                    <div class="recipe-illustrations">
+                                        <h4>Tools</h4>
+                                        <img src="images/tools_white.svg" alt="">
+                                    </div>
+                                </div>
+                            
+                                <div class="recipe-info wrapper">
+                                    <div class="recipe-photo">
+                                        <img src="images/recipe-02.jpg" alt="">
+                                    </div>
+                                    <div class="recipe-method">
+                                        <h4>Directions</h4>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit molestias delectus repellendus! Cupiditate delectus optio
+                                            velit dolore harum, possimus quis asperiores, cum et id impedit? Aliquam accusantium voluptates deserunt
+                                            et?
+                                        </p>
+                                        <p>
+                                            Cupiditate delectus optio velit dolore harum, possimus quis asperiores, cum et id impedit? Aliquam accusantium voluptates
+                                            deserunt et?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> -->

@@ -10,12 +10,40 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 body {
     font-family: 'Quicksand', sans-serif;
-    background-color: lightblue;
+    background-image: linear-gradient(rgba(255,255,255,0.7)), url("./../images/ruit_blauw.jpg");
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    text-align: center;
 }
 
+img {
+    width: 100%;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+section {
+    margin: 100px 0px;
+}
 .wrapper {
-    width: 60%;
+    max-width: 960px;
     margin: 0 auto;
+}
+
+.mainIngredient img {
+    -webkit-filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.4));
+    // filter: drop-shadow(2px 2px 1px #222);
+    // filter: alpha(opacity=10);
+}
+
+@media (max-width: 750px) {
+    .wrapper {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 .hidden {
@@ -25,7 +53,6 @@ body {
 .secHidden {
     display: none;
 }
-
 
 @import "components/header";
 @import "components/main-about";

@@ -134,11 +134,35 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background-color: lightblue; }
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.7))), url("./../images/ruit_blauw.jpg");
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.7)), url("./../images/ruit_blauw.jpg");
+  background-image: -o-linear-gradient(rgba(255, 255, 255, 0.7)), url("./../images/ruit_blauw.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7)), url("./../images/ruit_blauw.jpg");
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  text-align: center; }
+
+img {
+  width: 100%; }
+
+ul {
+  padding: 0;
+  list-style: none; }
+
+section {
+  margin: 100px 0px; }
 
 .wrapper {
-  width: 60%;
+  max-width: 960px;
   margin: 0 auto; }
+
+.mainIngredient img {
+  -webkit-filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.4)); }
+
+@media (max-width: 750px) {
+  .wrapper {
+    width: 90%;
+    margin: 0 auto; } }
 
 .hidden {
   display: none; }
@@ -147,10 +171,106 @@ body {
   display: none; }
 
 header {
-  background-color: papayawhip; }
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(1, 22, 50, 0.45))), url("./../images/recipe-01.jpg");
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.5), rgba(1, 22, 50, 0.45)), url("./../images/recipe-01.jpg");
+  background-image: -o-linear-gradient(rgba(255, 255, 255, 0.5), rgba(1, 22, 50, 0.45)), url("./../images/recipe-01.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(1, 22, 50, 0.45)), url("./../images/recipe-01.jpg");
+  background-color: rgba(1, 22, 50, 0.45);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.header-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-align: center;
+  margin: 100px auto;
+  color: white; }
+  .header-text h1 {
+    font-size: 50px; }
+
+.fa-arrow-circle-down {
+  font-size: 30px;
+  margin: 0 auto; }
 
 .about-stamppot {
-  background-color: papayawhip; }
+  max-width: 100%;
+  line-height: 30px;
+  text-align: center; }
+
+.pan {
+  width: 30%;
+  margin: 0 auto; }
 
 .mainIngredient img {
-  max-width: 20%; }
+  max-width: 30%;
+  margin: 20px; }
+
+.secIngredient img {
+  max-width: 30%; }
+
+.toppings img {
+  max-width: 30%;
+  margin: 20px; }
+
+.result-recipe {
+  background-color: #2875c8;
+  color: white;
+  border: 1px solid red;
+  margin-bottom: 0;
+  height: 100vh; }
+  .result-recipe h2 {
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0px; }
+  .result-recipe h4 {
+    margin: 0; }
+
+.recipe-container, .recipe-info {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+
+.recipe.ingredients {
+  width: 40%; }
+
+.recipe-illustrations {
+  width: 60%;
+  padding-left: 50px; }
+
+.recipe-photo {
+  width: 60%; }
+
+.recipe-photo, .recipe-method {
+  padding: 20px 20px 20px 0px; }
+
+.recipe-info {
+  padding-top: 20px;
+  border-top: 1px solid white; }
+
+.carouselCell {
+  width: 100%;
+  margin-right: 10px; }
+
+footer {
+  background-color: white; }
+  footer p {
+    color: blue;
+    font-size: 12px;
+    padding: 20px; }
